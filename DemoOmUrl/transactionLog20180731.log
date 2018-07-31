@@ -1,0 +1,402 @@
+2018-07-31T05:26:25+07:00 file: JMSUserAccountValidate.php, user: jinglejill@hotmail.com
+2018-07-31T05:26:25+07:00 Param=Value: modifiedUser=jinglejill@hotmail.com&userAccountID=0&lineID=&birthDate=&deviceToken=simulator&replaceSelf=0&password=882ef57e5df41a6c50be7ab7291305b332e46f18efd3be754ff543e4a1655f2d&fullName=&nickName=&roleID=0&username=jinglejill@hotmail.com&phoneNo=&modifiedDate=2018-07-31 05:26:30  0000&email=&idInserted=0&status=1&logInID=1&modifiedDeviceToken=simulator&dbName=(null)&actionScreen=validate userAccount&
+2018-07-31T05:26:25+07:00 set auto commit to off
+2018-07-31T05:26:25+07:00 query: selected row count = 0, sql: select * from DEMO_JUMMUM_OM.UserAccount where username = 'jinglejill@hotmail.com' and password = '882ef57e5df41a6c50be7ab7291305b332e46f18efd3be754ff543e4a1655f2d', modified user: jinglejill@hotmail.com
+2018-07-31T05:26:25+07:00 sql = select * from UserAccount where 0
+2018-07-31T05:26:25+07:00 multiQueryArray: select * from UserAccount where 0
+2018-07-31T05:26:25+07:00 query commit, file: JMSUserAccountValidate.php, user: jinglejill@hotmail.com
+2018-07-31T05:27:38+07:00 file: JMSUserAccountValidate.php, user: jinglejill@hotmail.com
+2018-07-31T05:27:38+07:00 Param=Value: modifiedUser=jinglejill@hotmail.com&userAccountID=0&lineID=&birthDate=&deviceToken=simulator&replaceSelf=0&password=15ad42fc5c50f289fa2c8bd31595c260a31bd82a0e6aace5f1aaefaae7514185&fullName=&nickName=&roleID=0&username=jinglejill@hotmail.com&phoneNo=&modifiedDate=2018-07-31 05:27:43  0000&email=&idInserted=0&status=1&logInID=1&modifiedDeviceToken=simulator&dbName=(null)&actionScreen=validate userAccount&
+2018-07-31T05:27:38+07:00 set auto commit to off
+2018-07-31T05:27:38+07:00 query: selected row count = 0, sql: select * from DEMO_JUMMUM_OM.UserAccount where username = 'jinglejill@hotmail.com' and password = '15ad42fc5c50f289fa2c8bd31595c260a31bd82a0e6aace5f1aaefaae7514185', modified user: jinglejill@hotmail.com
+2018-07-31T05:27:38+07:00 sql = select * from UserAccount where 0
+2018-07-31T05:27:38+07:00 multiQueryArray: select * from UserAccount where 0
+2018-07-31T05:27:38+07:00 query commit, file: JMSUserAccountValidate.php, user: jinglejill@hotmail.com
+2018-07-31T05:28:28+07:00 file: JMSWriteLog.php, user: (null)
+2018-07-31T05:28:28+07:00 
+Param=Value: stackTrace=jinglejill@hotmail.com,simulator
+-[__NSCFConstantString count]: unrecognized selector sent to instance 0x103753338
+0   CoreFoundation                      0x00000001043c21e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x0000000103a57031 objc_exception_throw   48
+2   CoreFoundation                      0x0000000104443784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   CoreFoundation                      0x0000000104344898 ___forwarding___   1432
+4   CoreFoundation                      0x0000000104344278 _CF_forwarding_prep_0   120
+5   DemoJummumOM                        0x0000000102faa81a __47-[HomeModel insertItems:withData:actionScreen:]_block_invoke   1018
+6   CFNetwork                           0x0000000108bebe76 __75-[__NSURLSessionLocal taskForClass:request:uploadFile:bodyData:completion:]_block_invoke   19
+7   CFNetwork                           0x0000000108beb6c7 __49-[__NSCFLocalSessionTask _task_onqueue_didFinish]_block_invoke   147
+8   Foundation                          0x000000010346d363 __NSBLOCKOPERATION_IS_CALLING_OUT_TO_A_BLOCK__   7
+9   Foundation                          0x000000010346d1ca -[NSBlockOperation main]   68
+10  Foundation                          0x000000010346b6b2 -[__NSOperationInternal _start:]   766
+11  libdispatch.dylib                   0x00000001097027ec _dispatch_client_callout   8
+12  libdispatch.dylib                   0x0000000109707db8 _dispatch_block_invoke_direct   592
+13  libdispatch.dylib                   0x00000001097027ec _dispatch_client_callout   8
+14  libdispatch.dylib                   0x0000000109707db8 _dispatch_block_invoke_direct   592
+15  libdispatch.dylib                   0x0000000109707b48 dispatch_block_perform   109
+16  Foundation                          0x000000010346775b __NSOQSchedule_f   337
+17  libdispatch.dylib                   0x00000001097027ec _dispatch_client_callout   8
+18  libdispatch.dylib                   0x000000010970d8cf _dispatch_main_queue_callback_4CF   628
+19  CoreFoundation                      0x0000000104384c99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+20  CoreFoundation                      0x0000000104348ea6 __CFRunLoopRun   2342
+21  CoreFoundation                      0x000000010434830b CFRunLoopRunSpecific   635
+22  GraphicsServices                    0x000000010ca09a73 GSEventRunModal   62
+23  UIKit                               0x0000000105a19057 UIApplicationMain   159
+24  DemoJummumOM                        0x00000001030215df main   111
+25  libdyld.dylib                       0x000000010977f955 start   1
+26  ???                                 0x0000000000000001 0x0   1&modifiedDeviceToken=simulator&modifiedUser=(null)&dbName=(null)&actionScreen=Logging&
+2018-07-31T05:28:28+07:00 
+fail with exception: jinglejill@hotmail.com,simulator
+-[__NSCFConstantString count]: unrecognized selector sent to instance 0x103753338
+0   CoreFoundation                      0x00000001043c21e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x0000000103a57031 objc_exception_throw   48
+2   CoreFoundation                      0x0000000104443784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   CoreFoundation                      0x0000000104344898 ___forwarding___   1432
+4   CoreFoundation                      0x0000000104344278 _CF_forwarding_prep_0   120
+5   DemoJummumOM                        0x0000000102faa81a __47-[HomeModel insertItems:withData:actionScreen:]_block_invoke   1018
+6   CFNetwork                           0x0000000108bebe76 __75-[__NSURLSessionLocal taskForClass:request:uploadFile:bodyData:completion:]_block_invoke   19
+7   CFNetwork                           0x0000000108beb6c7 __49-[__NSCFLocalSessionTask _task_onqueue_didFinish]_block_invoke   147
+8   Foundation                          0x000000010346d363 __NSBLOCKOPERATION_IS_CALLING_OUT_TO_A_BLOCK__   7
+9   Foundation                          0x000000010346d1ca -[NSBlockOperation main]   68
+10  Foundation                          0x000000010346b6b2 -[__NSOperationInternal _start:]   766
+11  libdispatch.dylib                   0x00000001097027ec _dispatch_client_callout   8
+12  libdispatch.dylib                   0x0000000109707db8 _dispatch_block_invoke_direct   592
+13  libdispatch.dylib                   0x00000001097027ec _dispatch_client_callout   8
+14  libdispatch.dylib                   0x0000000109707db8 _dispatch_block_invoke_direct   592
+15  libdispatch.dylib                   0x0000000109707b48 dispatch_block_perform   109
+16  Foundation                          0x000000010346775b __NSOQSchedule_f   337
+17  libdispatch.dylib                   0x00000001097027ec _dispatch_client_callout   8
+18  libdispatch.dylib                   0x000000010970d8cf _dispatch_main_queue_callback_4CF   628
+19  CoreFoundation                      0x0000000104384c99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+20  CoreFoundation                      0x0000000104348ea6 __CFRunLoopRun   2342
+21  CoreFoundation                      0x000000010434830b CFRunLoopRunSpecific   635
+22  GraphicsServices                    0x000000010ca09a73 GSEventRunModal   62
+23  UIKit                               0x0000000105a19057 UIApplicationMain   159
+24  DemoJummumOM                        0x00000001030215df main   111
+25  libdyld.dylib                       0x000000010977f955 start   1
+26  ???                                 0x0000000000000001 0x0   1
+2018-07-31T05:28:28+07:00 query: selected row count = 0, sql: select Value from DEMO_JUMMUM.Setting where keyName = 'DeviceTokenAdmin', modified user: (null)
+2018-07-31T05:28:28+07:00 send push to device: , body: {"alert":"Error occur, time:2018\/07\/31 05:28:28","sound":"default"}
+2018-07-31T05:28:30+07:00 push notification: success, device token : , payload: {"alert":"Error occur, time:2018\/07\/31 05:28:28","sound":"default"}
+2018-07-31T05:29:26+07:00 file: JMSWriteLog.php, user: (null)
+2018-07-31T05:29:26+07:00 
+Param=Value: stackTrace=(null),simulator
+-[AppDelegate alertMsg:]: unrecognized selector sent to instance 0x600000106150
+0   CoreFoundation                      0x000000010b1791e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x000000010a80e031 objc_exception_throw   48
+2   CoreFoundation                      0x000000010b1fa784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   UIKit                               0x000000010e4876db -[UIResponder doesNotRecognizeSelector:]   295
+4   CoreFoundation                      0x000000010b0fb5f8 ___forwarding___   760
+5   CoreFoundation                      0x000000010b0fb278 _CF_forwarding_prep_0   120
+6   DemoJummumOM                        0x0000000109da4801 __24-[AppDelegate itemsFail]_block_invoke   81
+7   UIKit                               0x000000010e622559 -[UIAlertController _invokeHandlersForAction:]   105
+8   UIKit                               0x000000010e622f5e __103-[UIAlertController _dismissAnimated:triggeringAction:triggeredByPopoverDimmingView:dismissCompletion:]_block_invoke.461   16
+9   UIKit                               0x000000010e3caca2 -[UIPresentationController transitionDidFinish:]   1346
+10  UIKit                               0x000000010e3ceb12 __56-[UIPresentationController runTransitionForCurrentState]_block_invoke.436   183
+11  UIKit                               0x000000010efb23b4 -[_UIViewControllerTransitionContext completeTransition:]   102
+12  UIKit                               0x000000010e31b0ad -[UIViewAnimationBlockDelegate _didEndBlockAnimation:finished:context:]   859
+13  UIKit                               0x000000010e2edea9 -[UIViewAnimationState sendDelegateAnimationDidStop:finished:]   343
+14  UIKit                               0x000000010e2ee4ec -[UIViewAnimationState animationDidStop:finished:]   293
+15  UIKit                               0x000000010e2ee5a0 -[UIViewAnimationState animationDidStop:finished:]   473
+16  QuartzCore                          0x000000010c43f5e5 _ZN2CA5Layer23run_animation_callbacksEPv   323
+17  libdispatch.dylib                   0x00000001105587ec _dispatch_client_callout   8
+18  libdispatch.dylib                   0x00000001105638cf _dispatch_main_queue_callback_4CF   628
+19  CoreFoundation                      0x000000010b13bc99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+20  CoreFoundation                      0x000000010b0ffea6 __CFRunLoopRun   2342
+21  CoreFoundation                      0x000000010b0ff30b CFRunLoopRunSpecific   635
+22  GraphicsServices                    0x000000011385fa73 GSEventRunModal   62
+23  UIKit                               0x000000010e259057 UIApplicationMain   159
+24  DemoJummumOM                        0x0000000109dd85df main   111
+25  libdyld.dylib                       0x00000001105d5955 start   1
+26  ???                                 0x0000000000000001 0x0   1&modifiedDeviceToken=simulator&modifiedUser=(null)&dbName=(null)&actionScreen=Logging&
+2018-07-31T05:29:26+07:00 
+fail with exception: (null),simulator
+-[AppDelegate alertMsg:]: unrecognized selector sent to instance 0x600000106150
+0   CoreFoundation                      0x000000010b1791e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x000000010a80e031 objc_exception_throw   48
+2   CoreFoundation                      0x000000010b1fa784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   UIKit                               0x000000010e4876db -[UIResponder doesNotRecognizeSelector:]   295
+4   CoreFoundation                      0x000000010b0fb5f8 ___forwarding___   760
+5   CoreFoundation                      0x000000010b0fb278 _CF_forwarding_prep_0   120
+6   DemoJummumOM                        0x0000000109da4801 __24-[AppDelegate itemsFail]_block_invoke   81
+7   UIKit                               0x000000010e622559 -[UIAlertController _invokeHandlersForAction:]   105
+8   UIKit                               0x000000010e622f5e __103-[UIAlertController _dismissAnimated:triggeringAction:triggeredByPopoverDimmingView:dismissCompletion:]_block_invoke.461   16
+9   UIKit                               0x000000010e3caca2 -[UIPresentationController transitionDidFinish:]   1346
+10  UIKit                               0x000000010e3ceb12 __56-[UIPresentationController runTransitionForCurrentState]_block_invoke.436   183
+11  UIKit                               0x000000010efb23b4 -[_UIViewControllerTransitionContext completeTransition:]   102
+12  UIKit                               0x000000010e31b0ad -[UIViewAnimationBlockDelegate _didEndBlockAnimation:finished:context:]   859
+13  UIKit                               0x000000010e2edea9 -[UIViewAnimationState sendDelegateAnimationDidStop:finished:]   343
+14  UIKit                               0x000000010e2ee4ec -[UIViewAnimationState animationDidStop:finished:]   293
+15  UIKit                               0x000000010e2ee5a0 -[UIViewAnimationState animationDidStop:finished:]   473
+16  QuartzCore                          0x000000010c43f5e5 _ZN2CA5Layer23run_animation_callbacksEPv   323
+17  libdispatch.dylib                   0x00000001105587ec _dispatch_client_callout   8
+18  libdispatch.dylib                   0x00000001105638cf _dispatch_main_queue_callback_4CF   628
+19  CoreFoundation                      0x000000010b13bc99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+20  CoreFoundation                      0x000000010b0ffea6 __CFRunLoopRun   2342
+21  CoreFoundation                      0x000000010b0ff30b CFRunLoopRunSpecific   635
+22  GraphicsServices                    0x000000011385fa73 GSEventRunModal   62
+23  UIKit                               0x000000010e259057 UIApplicationMain   159
+24  DemoJummumOM                        0x0000000109dd85df main   111
+25  libdyld.dylib                       0x00000001105d5955 start   1
+26  ???                                 0x0000000000000001 0x0   1
+2018-07-31T05:29:26+07:00 query: selected row count = 0, sql: select Value from DEMO_JUMMUM.Setting where keyName = 'DeviceTokenAdmin', modified user: (null)
+2018-07-31T05:29:26+07:00 send push to device: , body: {"alert":"Error occur, time:2018\/07\/31 05:29:26","sound":"default"}
+2018-07-31T05:29:27+07:00 push notification: success, device token : , payload: {"alert":"Error occur, time:2018\/07\/31 05:29:26","sound":"default"}
+2018-07-31T05:35:33+07:00 file: JMSWriteLog.php, user: (null)
+2018-07-31T05:35:33+07:00 
+Param=Value: stackTrace=jinglejill@hotmail.com,simulator
+-[__NSCFConstantString count]: unrecognized selector sent to instance 0x105585338
+0   CoreFoundation                      0x00000001061f41e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x0000000105889031 objc_exception_throw   48
+2   CoreFoundation                      0x0000000106275784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   CoreFoundation                      0x0000000106176898 ___forwarding___   1432
+4   CoreFoundation                      0x0000000106176278 _CF_forwarding_prep_0   120
+5   DemoJummumOM                        0x0000000104ddc81a __47-[HomeModel insertItems:withData:actionScreen:]_block_invoke   1018
+6   CFNetwork                           0x000000010aa1de76 __75-[__NSURLSessionLocal taskForClass:request:uploadFile:bodyData:completion:]_block_invoke   19
+7   CFNetwork                           0x000000010aa1d6c7 __49-[__NSCFLocalSessionTask _task_onqueue_didFinish]_block_invoke   147
+8   Foundation                          0x000000010529f363 __NSBLOCKOPERATION_IS_CALLING_OUT_TO_A_BLOCK__   7
+9   Foundation                          0x000000010529f1ca -[NSBlockOperation main]   68
+10  Foundation                          0x000000010529d6b2 -[__NSOperationInternal _start:]   766
+11  libdispatch.dylib                   0x000000010b5347ec _dispatch_client_callout   8
+12  libdispatch.dylib                   0x000000010b539db8 _dispatch_block_invoke_direct   592
+13  libdispatch.dylib                   0x000000010b5347ec _dispatch_client_callout   8
+14  libdispatch.dylib                   0x000000010b539db8 _dispatch_block_invoke_direct   592
+15  libdispatch.dylib                   0x000000010b539b48 dispatch_block_perform   109
+16  Foundation                          0x000000010529975b __NSOQSchedule_f   337
+17  libdispatch.dylib                   0x000000010b5347ec _dispatch_client_callout   8
+18  libdispatch.dylib                   0x000000010b53f8cf _dispatch_main_queue_callback_4CF   628
+19  CoreFoundation                      0x00000001061b6c99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+20  CoreFoundation                      0x000000010617aea6 __CFRunLoopRun   2342
+21  CoreFoundation                      0x000000010617a30b CFRunLoopRunSpecific   635
+22  GraphicsServices                    0x000000010e83ba73 GSEventRunModal   62
+23  UIKit                               0x000000010784b057 UIApplicationMain   159
+24  DemoJummumOM                        0x0000000104e535df main   111
+25  libdyld.dylib                       0x000000010b5b1955 start   1
+26  ???                                 0x0000000000000001 0x0   1&modifiedDeviceToken=simulator&modifiedUser=(null)&dbName=(null)&actionScreen=Logging&
+2018-07-31T05:35:33+07:00 
+fail with exception: jinglejill@hotmail.com,simulator
+-[__NSCFConstantString count]: unrecognized selector sent to instance 0x105585338
+0   CoreFoundation                      0x00000001061f41e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x0000000105889031 objc_exception_throw   48
+2   CoreFoundation                      0x0000000106275784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   CoreFoundation                      0x0000000106176898 ___forwarding___   1432
+4   CoreFoundation                      0x0000000106176278 _CF_forwarding_prep_0   120
+5   DemoJummumOM                        0x0000000104ddc81a __47-[HomeModel insertItems:withData:actionScreen:]_block_invoke   1018
+6   CFNetwork                           0x000000010aa1de76 __75-[__NSURLSessionLocal taskForClass:request:uploadFile:bodyData:completion:]_block_invoke   19
+7   CFNetwork                           0x000000010aa1d6c7 __49-[__NSCFLocalSessionTask _task_onqueue_didFinish]_block_invoke   147
+8   Foundation                          0x000000010529f363 __NSBLOCKOPERATION_IS_CALLING_OUT_TO_A_BLOCK__   7
+9   Foundation                          0x000000010529f1ca -[NSBlockOperation main]   68
+10  Foundation                          0x000000010529d6b2 -[__NSOperationInternal _start:]   766
+11  libdispatch.dylib                   0x000000010b5347ec _dispatch_client_callout   8
+12  libdispatch.dylib                   0x000000010b539db8 _dispatch_block_invoke_direct   592
+13  libdispatch.dylib                   0x000000010b5347ec _dispatch_client_callout   8
+14  libdispatch.dylib                   0x000000010b539db8 _dispatch_block_invoke_direct   592
+15  libdispatch.dylib                   0x000000010b539b48 dispatch_block_perform   109
+16  Foundation                          0x000000010529975b __NSOQSchedule_f   337
+17  libdispatch.dylib                   0x000000010b5347ec _dispatch_client_callout   8
+18  libdispatch.dylib                   0x000000010b53f8cf _dispatch_main_queue_callback_4CF   628
+19  CoreFoundation                      0x00000001061b6c99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+20  CoreFoundation                      0x000000010617aea6 __CFRunLoopRun   2342
+21  CoreFoundation                      0x000000010617a30b CFRunLoopRunSpecific   635
+22  GraphicsServices                    0x000000010e83ba73 GSEventRunModal   62
+23  UIKit                               0x000000010784b057 UIApplicationMain   159
+24  DemoJummumOM                        0x0000000104e535df main   111
+25  libdyld.dylib                       0x000000010b5b1955 start   1
+26  ???                                 0x0000000000000001 0x0   1
+2018-07-31T05:35:33+07:00 query: selected row count = 0, sql: select Value from DEMO_JUMMUM.Setting where keyName = 'DeviceTokenAdmin', modified user: (null)
+2018-07-31T05:35:33+07:00 send push to device: , body: {"alert":"Error occur, time:2018\/07\/31 05:35:33","sound":"default"}
+2018-07-31T05:35:35+07:00 push notification: success, device token : , payload: {"alert":"Error occur, time:2018\/07\/31 05:35:33","sound":"default"}
+2018-07-31T05:40:40+07:00 file: JMSWriteLog.php, user: (null)
+2018-07-31T05:40:40+07:00 
+Param=Value: stackTrace=(null),simulator
+-[AppDelegate alertMsg:]: unrecognized selector sent to instance 0x604000111af0
+0   CoreFoundation                      0x000000010543d1e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x0000000104ad2031 objc_exception_throw   48
+2   CoreFoundation                      0x00000001054be784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   UIKit                               0x0000000106cc26db -[UIResponder doesNotRecognizeSelector:]   295
+4   CoreFoundation                      0x00000001053bf5f8 ___forwarding___   760
+5   CoreFoundation                      0x00000001053bf278 _CF_forwarding_prep_0   120
+6   DemoJummumOM                        0x0000000104068801 __24-[AppDelegate itemsFail]_block_invoke   81
+7   UIKit                               0x0000000106e5d559 -[UIAlertController _invokeHandlersForAction:]   105
+8   UIKit                               0x0000000106e5df5e __103-[UIAlertController _dismissAnimated:triggeringAction:triggeredByPopoverDimmingView:dismissCompletion:]_block_invoke.461   16
+9   UIKit                               0x0000000106c05ca2 -[UIPresentationController transitionDidFinish:]   1346
+10  UIKit                               0x0000000106c09b12 __56-[UIPresentationController runTransitionForCurrentState]_block_invoke.436   183
+11  UIKit                               0x00000001077ed3b4 -[_UIViewControllerTransitionContext completeTransition:]   102
+12  UIKit                               0x0000000106b560ad -[UIViewAnimationBlockDelegate _didEndBlockAnimation:finished:context:]   859
+13  UIKit                               0x0000000106b28ea9 -[UIViewAnimationState sendDelegateAnimationDidStop:finished:]   343
+14  UIKit                               0x0000000106b294ec -[UIViewAnimationState animationDidStop:finished:]   293
+15  UIKit                               0x0000000106b295a0 -[UIViewAnimationState animationDidStop:finished:]   473
+16  QuartzCore                          0x00000001067035e5 _ZN2CA5Layer23run_animation_callbacksEPv   323
+17  libdispatch.dylib                   0x000000010a77d7ec _dispatch_client_callout   8
+18  libdispatch.dylib                   0x000000010a7888cf _dispatch_main_queue_callback_4CF   628
+19  CoreFoundation                      0x00000001053ffc99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+20  CoreFoundation                      0x00000001053c3ea6 __CFRunLoopRun   2342
+21  CoreFoundation                      0x00000001053c330b CFRunLoopRunSpecific   635
+22  GraphicsServices                    0x000000010da84a73 GSEventRunModal   62
+23  UIKit                               0x0000000106a94057 UIApplicationMain   159
+24  DemoJummumOM                        0x000000010409c5df main   111
+25  libdyld.dylib                       0x000000010a7fa955 start   1
+26  ???                                 0x0000000000000001 0x0   1&modifiedDeviceToken=simulator&modifiedUser=(null)&dbName=(null)&actionScreen=Logging&
+2018-07-31T05:40:40+07:00 
+fail with exception: (null),simulator
+-[AppDelegate alertMsg:]: unrecognized selector sent to instance 0x604000111af0
+0   CoreFoundation                      0x000000010543d1e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x0000000104ad2031 objc_exception_throw   48
+2   CoreFoundation                      0x00000001054be784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   UIKit                               0x0000000106cc26db -[UIResponder doesNotRecognizeSelector:]   295
+4   CoreFoundation                      0x00000001053bf5f8 ___forwarding___   760
+5   CoreFoundation                      0x00000001053bf278 _CF_forwarding_prep_0   120
+6   DemoJummumOM                        0x0000000104068801 __24-[AppDelegate itemsFail]_block_invoke   81
+7   UIKit                               0x0000000106e5d559 -[UIAlertController _invokeHandlersForAction:]   105
+8   UIKit                               0x0000000106e5df5e __103-[UIAlertController _dismissAnimated:triggeringAction:triggeredByPopoverDimmingView:dismissCompletion:]_block_invoke.461   16
+9   UIKit                               0x0000000106c05ca2 -[UIPresentationController transitionDidFinish:]   1346
+10  UIKit                               0x0000000106c09b12 __56-[UIPresentationController runTransitionForCurrentState]_block_invoke.436   183
+11  UIKit                               0x00000001077ed3b4 -[_UIViewControllerTransitionContext completeTransition:]   102
+12  UIKit                               0x0000000106b560ad -[UIViewAnimationBlockDelegate _didEndBlockAnimation:finished:context:]   859
+13  UIKit                               0x0000000106b28ea9 -[UIViewAnimationState sendDelegateAnimationDidStop:finished:]   343
+14  UIKit                               0x0000000106b294ec -[UIViewAnimationState animationDidStop:finished:]   293
+15  UIKit                               0x0000000106b295a0 -[UIViewAnimationState animationDidStop:finished:]   473
+16  QuartzCore                          0x00000001067035e5 _ZN2CA5Layer23run_animation_callbacksEPv   323
+17  libdispatch.dylib                   0x000000010a77d7ec _dispatch_client_callout   8
+18  libdispatch.dylib                   0x000000010a7888cf _dispatch_main_queue_callback_4CF   628
+19  CoreFoundation                      0x00000001053ffc99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+20  CoreFoundation                      0x00000001053c3ea6 __CFRunLoopRun   2342
+21  CoreFoundation                      0x00000001053c330b CFRunLoopRunSpecific   635
+22  GraphicsServices                    0x000000010da84a73 GSEventRunModal   62
+23  UIKit                               0x0000000106a94057 UIApplicationMain   159
+24  DemoJummumOM                        0x000000010409c5df main   111
+25  libdyld.dylib                       0x000000010a7fa955 start   1
+26  ???                                 0x0000000000000001 0x0   1
+2018-07-31T05:40:40+07:00 query: selected row count = 0, sql: select Value from DEMO_JUMMUM.Setting where keyName = 'DeviceTokenAdmin', modified user: (null)
+2018-07-31T05:40:40+07:00 send push to device: , body: {"alert":"Error occur, time:2018\/07\/31 05:40:40","sound":"default"}
+2018-07-31T05:40:41+07:00 push notification: success, device token : , payload: {"alert":"Error occur, time:2018\/07\/31 05:40:40","sound":"default"}
+2018-07-31T07:26:01+07:00 file: JMSWriteLog.php, user: (null)
+2018-07-31T07:26:01+07:00 
+Param=Value: stackTrace=jinglejill@hotmail.com,simulator
+-[OrderTaking dbName]: unrecognized selector sent to instance 0x600000323ac0
+0   CoreFoundation                      0x0000000103d8c1e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x0000000103421031 objc_exception_throw   48
+2   CoreFoundation                      0x0000000103e0d784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   CoreFoundation                      0x0000000103d0e898 ___forwarding___   1432
+4   CoreFoundation                      0x0000000103d0e278 _CF_forwarding_prep_0   120
+5   DemoJummumOM                        0x0000000102a0c255 -[LogInViewController itemsInsertedWithReturnData:]   805
+6   DemoJummumOM                        0x0000000102977f21 __47-[HomeModel insertItems:withData:actionScreen:]_block_invoke   2209
+7   CFNetwork                           0x000000010865ae76 __75-[__NSURLSessionLocal taskForClass:request:uploadFile:bodyData:completion:]_block_invoke   19
+8   CFNetwork                           0x000000010865a6c7 __49-[__NSCFLocalSessionTask _task_onqueue_didFinish]_block_invoke   147
+9   Foundation                          0x0000000102e37363 __NSBLOCKOPERATION_IS_CALLING_OUT_TO_A_BLOCK__   7
+10  Foundation                          0x0000000102e371ca -[NSBlockOperation main]   68
+11  Foundation                          0x0000000102e356b2 -[__NSOperationInternal _start:]   766
+12  libdispatch.dylib                   0x000000010916a7ec _dispatch_client_callout   8
+13  libdispatch.dylib                   0x000000010916fdb8 _dispatch_block_invoke_direct   592
+14  libdispatch.dylib                   0x000000010916a7ec _dispatch_client_callout   8
+15  libdispatch.dylib                   0x000000010916fdb8 _dispatch_block_invoke_direct   592
+16  libdispatch.dylib                   0x000000010916fb48 dispatch_block_perform   109
+17  Foundation                          0x0000000102e3175b __NSOQSchedule_f   337
+18  libdispatch.dylib                   0x000000010916a7ec _dispatch_client_callout   8
+19  libdispatch.dylib                   0x00000001091758cf _dispatch_main_queue_callback_4CF   628
+20  CoreFoundation                      0x0000000103d4ec99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+21  CoreFoundation                      0x0000000103d12ea6 __CFRunLoopRun   2342
+22  CoreFoundation                      0x0000000103d1230b CFRunLoopRunSpecific   635
+23  GraphicsServices                    0x000000010c471a73 GSEventRunModal   62
+24  UIKit                               0x000000010551d057 UIApplicationMain   159
+25  DemoJummumOM                        0x00000001029ed9ef main   111
+26  libdyld.dylib                       0x00000001091e7955 start   1
+27  ???                                 0x0000000000000001 0x0   1&modifiedDeviceToken=simulator&modifiedUser=(null)&dbName=(null)&actionScreen=Logging&
+2018-07-31T07:26:01+07:00 
+fail with exception: jinglejill@hotmail.com,simulator
+-[OrderTaking dbName]: unrecognized selector sent to instance 0x600000323ac0
+0   CoreFoundation                      0x0000000103d8c1e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x0000000103421031 objc_exception_throw   48
+2   CoreFoundation                      0x0000000103e0d784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   CoreFoundation                      0x0000000103d0e898 ___forwarding___   1432
+4   CoreFoundation                      0x0000000103d0e278 _CF_forwarding_prep_0   120
+5   DemoJummumOM                        0x0000000102a0c255 -[LogInViewController itemsInsertedWithReturnData:]   805
+6   DemoJummumOM                        0x0000000102977f21 __47-[HomeModel insertItems:withData:actionScreen:]_block_invoke   2209
+7   CFNetwork                           0x000000010865ae76 __75-[__NSURLSessionLocal taskForClass:request:uploadFile:bodyData:completion:]_block_invoke   19
+8   CFNetwork                           0x000000010865a6c7 __49-[__NSCFLocalSessionTask _task_onqueue_didFinish]_block_invoke   147
+9   Foundation                          0x0000000102e37363 __NSBLOCKOPERATION_IS_CALLING_OUT_TO_A_BLOCK__   7
+10  Foundation                          0x0000000102e371ca -[NSBlockOperation main]   68
+11  Foundation                          0x0000000102e356b2 -[__NSOperationInternal _start:]   766
+12  libdispatch.dylib                   0x000000010916a7ec _dispatch_client_callout   8
+13  libdispatch.dylib                   0x000000010916fdb8 _dispatch_block_invoke_direct   592
+14  libdispatch.dylib                   0x000000010916a7ec _dispatch_client_callout   8
+15  libdispatch.dylib                   0x000000010916fdb8 _dispatch_block_invoke_direct   592
+16  libdispatch.dylib                   0x000000010916fb48 dispatch_block_perform   109
+17  Foundation                          0x0000000102e3175b __NSOQSchedule_f   337
+18  libdispatch.dylib                   0x000000010916a7ec _dispatch_client_callout   8
+19  libdispatch.dylib                   0x00000001091758cf _dispatch_main_queue_callback_4CF   628
+20  CoreFoundation                      0x0000000103d4ec99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+21  CoreFoundation                      0x0000000103d12ea6 __CFRunLoopRun   2342
+22  CoreFoundation                      0x0000000103d1230b CFRunLoopRunSpecific   635
+23  GraphicsServices                    0x000000010c471a73 GSEventRunModal   62
+24  UIKit                               0x000000010551d057 UIApplicationMain   159
+25  DemoJummumOM                        0x00000001029ed9ef main   111
+26  libdyld.dylib                       0x00000001091e7955 start   1
+27  ???                                 0x0000000000000001 0x0   1
+2018-07-31T07:26:01+07:00 query: selected row count = 0, sql: select Value from DEMO_JUMMUM.Setting where keyName = 'DeviceTokenAdmin', modified user: (null)
+2018-07-31T07:26:01+07:00 send push to device: , body: {"alert":"Error occur, time:2018\/07\/31 07:26:01","sound":"default"}
+2018-07-31T07:26:04+07:00 push notification: success, device token : , payload: {"alert":"Error occur, time:2018\/07\/31 07:26:01","sound":"default"}
+2018-07-31T07:27:16+07:00 file: JMSWriteLog.php, user: (null)
+2018-07-31T07:27:16+07:00 
+Param=Value: stackTrace=jinglejill@hotmail.com,simulator
+-[Setting branchID]: unrecognized selector sent to instance 0x60000029e9b0
+0   CoreFoundation                      0x000000010888e1e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x0000000107f23031 objc_exception_throw   48
+2   CoreFoundation                      0x000000010890f784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   CoreFoundation                      0x0000000108810898 ___forwarding___   1432
+4   CoreFoundation                      0x0000000108810278 _CF_forwarding_prep_0   120
+5   DemoJummumOM                        0x000000010750e204 -[LogInViewController itemsInsertedWithReturnData:]   724
+6   DemoJummumOM                        0x0000000107479f2c __47-[HomeModel insertItems:withData:actionScreen:]_block_invoke   2188
+7   CFNetwork                           0x000000010d1f8e76 __75-[__NSURLSessionLocal taskForClass:request:uploadFile:bodyData:completion:]_block_invoke   19
+8   CFNetwork                           0x000000010d1f86c7 __49-[__NSCFLocalSessionTask _task_onqueue_didFinish]_block_invoke   147
+9   Foundation                          0x0000000107939363 __NSBLOCKOPERATION_IS_CALLING_OUT_TO_A_BLOCK__   7
+10  Foundation                          0x00000001079391ca -[NSBlockOperation main]   68
+11  Foundation                          0x00000001079376b2 -[__NSOperationInternal _start:]   766
+12  libdispatch.dylib                   0x000000010dc6f7ec _dispatch_client_callout   8
+13  libdispatch.dylib                   0x000000010dc74db8 _dispatch_block_invoke_direct   592
+14  libdispatch.dylib                   0x000000010dc6f7ec _dispatch_client_callout   8
+15  libdispatch.dylib                   0x000000010dc74db8 _dispatch_block_invoke_direct   592
+16  libdispatch.dylib                   0x000000010dc74b48 dispatch_block_perform   109
+17  Foundation                          0x000000010793375b __NSOQSchedule_f   337
+18  libdispatch.dylib                   0x000000010dc6f7ec _dispatch_client_callout   8
+19  libdispatch.dylib                   0x000000010dc7a8cf _dispatch_main_queue_callback_4CF   628
+20  CoreFoundation                      0x0000000108850c99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+21  CoreFoundation                      0x0000000108814ea6 __CFRunLoopRun   2342
+22  CoreFoundation                      0x000000010881430b CFRunLoopRunSpecific   635
+23  GraphicsServices                    0x0000000110f76a73 GSEventRunModal   62
+24  UIKit                               0x000000010a0d3057 UIApplicationMain   159
+25  DemoJummumOM                        0x00000001074ef9ef main   111
+26  libdyld.dylib                       0x000000010dcec955 start   1
+27  ???                                 0x0000000000000001 0x0   1&modifiedDeviceToken=simulator&modifiedUser=(null)&dbName=(null)&actionScreen=Logging&
+2018-07-31T07:27:16+07:00 
+fail with exception: jinglejill@hotmail.com,simulator
+-[Setting branchID]: unrecognized selector sent to instance 0x60000029e9b0
+0   CoreFoundation                      0x000000010888e1e6 __exceptionPreprocess   294
+1   libobjc.A.dylib                     0x0000000107f23031 objc_exception_throw   48
+2   CoreFoundation                      0x000000010890f784 -[NSObject(NSObject) doesNotRecognizeSelector:]   132
+3   CoreFoundation                      0x0000000108810898 ___forwarding___   1432
+4   CoreFoundation                      0x0000000108810278 _CF_forwarding_prep_0   120
+5   DemoJummumOM                        0x000000010750e204 -[LogInViewController itemsInsertedWithReturnData:]   724
+6   DemoJummumOM                        0x0000000107479f2c __47-[HomeModel insertItems:withData:actionScreen:]_block_invoke   2188
+7   CFNetwork                           0x000000010d1f8e76 __75-[__NSURLSessionLocal taskForClass:request:uploadFile:bodyData:completion:]_block_invoke   19
+8   CFNetwork                           0x000000010d1f86c7 __49-[__NSCFLocalSessionTask _task_onqueue_didFinish]_block_invoke   147
+9   Foundation                          0x0000000107939363 __NSBLOCKOPERATION_IS_CALLING_OUT_TO_A_BLOCK__   7
+10  Foundation                          0x00000001079391ca -[NSBlockOperation main]   68
+11  Foundation                          0x00000001079376b2 -[__NSOperationInternal _start:]   766
+12  libdispatch.dylib                   0x000000010dc6f7ec _dispatch_client_callout   8
+13  libdispatch.dylib                   0x000000010dc74db8 _dispatch_block_invoke_direct   592
+14  libdispatch.dylib                   0x000000010dc6f7ec _dispatch_client_callout   8
+15  libdispatch.dylib                   0x000000010dc74db8 _dispatch_block_invoke_direct   592
+16  libdispatch.dylib                   0x000000010dc74b48 dispatch_block_perform   109
+17  Foundation                          0x000000010793375b __NSOQSchedule_f   337
+18  libdispatch.dylib                   0x000000010dc6f7ec _dispatch_client_callout   8
+19  libdispatch.dylib                   0x000000010dc7a8cf _dispatch_main_queue_callback_4CF   628
+20  CoreFoundation                      0x0000000108850c99 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__   9
+21  CoreFoundation                      0x0000000108814ea6 __CFRunLoopRun   2342
+22  CoreFoundation                      0x000000010881430b CFRunLoopRunSpecific   635
+23  GraphicsServices                    0x0000000110f76a73 GSEventRunModal   62
+24  UIKit                               0x000000010a0d3057 UIApplicationMain   159
+25  DemoJummumOM                        0x00000001074ef9ef main   111
+26  libdyld.dylib                       0x000000010dcec955 start   1
+27  ???                                 0x0000000000000001 0x0   1
+2018-07-31T07:27:16+07:00 query: selected row count = 0, sql: select Value from DEMO_JUMMUM.Setting where keyName = 'DeviceTokenAdmin', modified user: (null)
+2018-07-31T07:27:16+07:00 send push to device: , body: {"alert":"Error occur, time:2018\/07\/31 07:27:16","sound":"default"}
+2018-07-31T07:27:16+07:00 push notification: success, device token : , payload: {"alert":"Error occur, time:2018\/07\/31 07:27:16","sound":"default"}

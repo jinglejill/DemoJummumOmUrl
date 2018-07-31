@@ -428,7 +428,7 @@
     }
     
     function sendPushNotificationToDeviceWithPath($deviceToken,$path,$passForCk,$msg,$receiptID,$category,$contentAvailable)
-    {        
+    {
         if($category == '')
         {
             if($msg == '')
@@ -791,8 +791,6 @@
         $message = 'คุณพิสุทธิ์ กำลังไปเขาใหญ่กับฉัน แกอยากได้อะไรไหมกั๊ง (สายน้ำผึ้ง)pushnotification';
         
 
-        writeToLog("test path: " . $path);
-        writeToLog("test pass: " . $pass);
         $ctx = stream_context_create();
         stream_context_set_option($ctx, 'ssl', 'local_cert', "$path".'ck.pem');
         stream_context_set_option($ctx, 'ssl', 'passphrase', $pass);

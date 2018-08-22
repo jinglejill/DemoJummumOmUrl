@@ -177,7 +177,11 @@
     for($i=0; $i<sizeof($selectedRow); $i++)
     {
         $deviceToken = $selectedRow[$i]["DeviceToken"];
-        array_push($pushSyncDeviceTokenReceiveOrder,$deviceToken);
+        $modifiedDeviceToken = $_POST["modifiedDeviceToken"];
+        if($deviceToken != $modifiedDeviceToken)
+        {
+            array_push($pushSyncDeviceTokenReceiveOrder,$deviceToken);
+        }
     }
     
     sendPushNotificationToDeviceWithPath($pushSyncDeviceTokenReceiveOrder,'./','jill',$msg,$receiptID,$category,1);

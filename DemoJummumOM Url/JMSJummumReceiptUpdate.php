@@ -1,31 +1,24 @@
 <?php
     include_once("dbConnect.php");
-    setConnectionValue("DEMO_JUMMUM");
+    setConnectionValue($jummum);
     writeToLog("file: " . basename(__FILE__) . ", user: " . $_POST["modifiedUser"]);
     printAllPost();
     ini_set("memory_limit","-1");
     
 
-    if(isset($_POST["branchID"]) && isset($_POST["receiptID"]) && isset($_POST["status"]) && isset($_POST["sendToKitchenDate"]) && isset($_POST["deliveredDate"]) && isset($_POST["modifiedUser"]) && isset($_POST["modifiedDate"]))
+    if(isset($_POST["branchID"]) && isset($_POST["receiptID"]) && isset($_POST["status"]) && isset($_POST["modifiedUser"]) && isset($_POST["modifiedDate"]))
     {
         $branchID = $_POST["branchID"];
         $receiptID = $_POST["receiptID"];
         $status = $_POST["status"];
-        $sendToKitchenDate = $_POST["sendToKitchenDate"];
-        $deliveredDate = $_POST["deliveredDate"];
         $modifiedUser = $_POST["modifiedUser"];
         $modifiedDate = $_POST["modifiedDate"];
+        
         
         
         $modifiedDeviceToken = $_POST["modifiedDeviceToken"];
         
     }
-    if(isset($_POST["maxModifiedDate"]))
-    {
-        $maxModifiedDate = $_POST["maxModifiedDate"];
-    
-    }
-    
     
     
     
@@ -41,49 +34,67 @@
     mysqli_autocommit($con,FALSE);
     writeToLog("set auto commit to off");
     
-
-    
-    $alreadyDone = 0;
-    if($status == 5)
+    //*****ลูกค้ากดยกเลิก หรือส่งคำร้อง
+    //2->7
+    //5,6->8
+    //7->9
+    //8->10
+    //*****ร้านค้ากดให้ลูกค้า -> ยกเลิก หรือส่งคำร้อง
+    //2->9
+    //5,6->10
+    if($status == 9)
     {
-        $sql = "select * from receipt where receiptID = '$receiptID' and status = '2'";
+        $sql = "select * from receipt where receiptID = '$receiptID' and status in ('2','7')";
         $selectedRow = getSelectedRow($sql);
         if(sizeof($selectedRow) == 0)
         {
             $alreadyDone = 1;
         }
         
-        
-        $msg = "Processing";
-        $category = "processing";
+        $msg = "Order cancelled";
+        $category = "clear";
     }
-    else if($status == 6)
+    else if($status == 10)
     {
-        $sql = "select * from receipt where receiptID = '$receiptID' and status = '5'";
+        $sql = "select * from receipt where receiptID = '$receiptID' and status in ('5','6','8')";
         $selectedRow = getSelectedRow($sql);
         if(sizeof($selectedRow) == 0)
         {
             $alreadyDone = 1;
         }
         
-        $msg = "Delivered";
-        $category = "delivered";
+        $msg = "Order dispute finished";
+        $category = "clear";
+    }
+    else if($status == 11)
+    {
+        $sql = "select * from receipt where receiptID = '$receiptID' and status in ('7','8')";
+        $selectedRow = getSelectedRow($sql);
+        if(sizeof($selectedRow) == 0)
+        {
+            $alreadyDone = 1;
+        }
+        
+        $msg = "Negotiate request";
+        $category = "cancelOrder";
+    }
+    else if($status == 14)
+    {
+        $sql = "select * from receipt where receiptID = '$receiptID' and status = '13'";
+        $selectedRow = getSelectedRow($sql);
+        if(sizeof($selectedRow) == 0)
+        {
+            $alreadyDone = 1;
+        }
+        
+        $msg = "Order dispute finished";
+        $category = "clear";
     }
 
     writeToLog("alreadyDone: " . $alreadyDone);
     if(!$alreadyDone)
     {
-        if($status == 5)
-        {
-            $sql = "update receipt set status = '$status', statusRoute = concat(statusRoute,',','$status'),sendToKitchenDate='$sendToKitchenDate', modifiedUser = '$modifiedUser', modifiedDate = '$modifiedDate' where receiptID = '$receiptID'";
-            
-        }
-        else if($status == 6)
-        {
-            $sql = "update receipt set status = '$status', statusRoute = concat(statusRoute,',','$status'),deliveredDate='$deliveredDate', modifiedUser = '$modifiedUser', modifiedDate = '$modifiedDate' where receiptID = '$receiptID'";
-            
-        }
-        
+        $sql = "update receipt set status = '$status', statusRoute = concat(statusRoute,',','$status'), modifiedUser = '$modifiedUser', modifiedDate = '$modifiedDate' where receiptID = '$receiptID'";
         $ret = doQueryTask($sql);
         if($ret != "")
         {
@@ -101,16 +112,16 @@
     $selectedRow = getSelectedRow($sql);
     if(sizeof($selectedRow)==0)
     {
-        $sql = "select UrlNoti,AlarmShop from DEMO_JUMMUM_OM.branch where branchID = '$branchID'";
-        $selectedRow = getSelectedRow($sql);
-        $urlNoti = $selectedRow[0]["UrlNoti"];
-        $alarmShop = $selectedRow[0]["AlarmShop"];
-        if($alarmShop == 1)
+//        $sql = "select UrlNoti,AlarmShop from $jummumOM.branch where branchID = '$branchID'";
+//        $selectedRow = getSelectedRow($sql);
+//        $urlNoti = $selectedRow[0]["UrlNoti"];
+//        $alarmShop = $selectedRow[0]["AlarmShop"];
+//        if($alarmShop == 1)
         {
             //alarmShopOff
             //query statement
             $ledStatus = 0;
-            $sql = "update DEMO_JUMMUM_OM.Branch set LedStatus = '$ledStatus', ModifiedUser = '$modifiedUser', ModifiedDate = '$modifiedDate' where branchID = '$branchID';";
+            $sql = "update $jummumOM.Branch set LedStatus = '$ledStatus', ModifiedUser = '$modifiedUser', ModifiedDate = '$modifiedDate' where branchID = '$branchID';";
             $ret = doQueryTask($sql);
             if($ret != "")
             {
@@ -134,7 +145,7 @@
         $pushSyncDeviceTokenAdmin = $selectedRow[0]["Value"];
         $arrPushSyncDeviceTokenAdmin = array();
         array_push($arrPushSyncDeviceTokenAdmin,$pushSyncDeviceTokenAdmin);
-        sendPushNotificationToDeviceWithPath($arrPushSyncDeviceTokenAdmin,'./../DEMO_JUMMUM/','jill','negotiation arrive!',0,0,1);
+        sendPushNotificationToDeviceWithPath($arrPushSyncDeviceTokenAdmin,"./../$jummum/",'jill','negotiation arrive!',0,0,1);
         
         
         //alarm admin
@@ -159,19 +170,9 @@
     }
     
     
-    //dataJson
-    $sql = "select '$alreadyDone' as Text;";
-    $sql .= "select * from receipt where receiptID = '$receiptID';";
-    $sql .= "select * from receipt where branchID = '$branchID' and modifiedDate > '$maxModifiedDate';";
-    $dataJson = executeMultiQueryArray($sql);
-    
-    
-    
-    
-    
     //push sync to other device
     $pushSyncDeviceTokenReceiveOrder = array();
-    $sql = "select * from DEMO_JUMMUM_OM.device left join DEMO_JUMMUM_OM.Branch on DEMO_JUMMUM_OM.device.DbName = DEMO_JUMMUM_OM.Branch.DbName where branchID = '$branchID';";
+    $sql = "select * from $jummumOM.device left join $jummumOM.Branch on $jummumOM.device.DbName = $jummumOM.Branch.DbName where branchID = '$branchID';";
     $selectedRow = getSelectedRow($sql);
     for($i=0; $i<sizeof($selectedRow); $i++)
     {
@@ -181,7 +182,7 @@
         {
             array_push($pushSyncDeviceTokenReceiveOrder,$deviceToken);
         }
-    }    
+    }
     
     sendPushNotificationToDeviceWithPath($pushSyncDeviceTokenReceiveOrder,'./','jill',$msg,$receiptID,$category,1);
     
@@ -195,17 +196,32 @@
     $memberID = $selectedRow[0]["MemberID"];
     
     
-    $sql = "select login.DeviceToken from login left join useraccount on login.username = useraccount.username where useraccount.UserAccountID = '$memberID' order by login.modifiedDate desc limit 1;";
+    $sql = "select login.DeviceToken,login.ModifiedDate,login.Username from useraccount left join login on useraccount.username = login.username where useraccount.UserAccountID = '$memberID' and login.status = '1' order by login.modifiedDate desc;";
     $selectedRow = getSelectedRow($sql);
     $customerDeviceToken = $selectedRow[0]["DeviceToken"];
-    $arrCustomerDeviceToken = array();
-    array_push($arrCustomerDeviceToken,$customerDeviceToken);
-    $category = "updateStatus";
-    sendPushNotificationToDeviceWithPath($arrCustomerDeviceToken,'./../DemoJummum/','jill',$msg,$receiptID,$category,1);
+    $logInModifiedDate = $selectedRow[0]["ModifiedDate"];
+    $logInUsername = $selectedRow[0]["Username"];
+    $sql = "select * from login where DeviceToken = '$customerDeviceToken' and Username != '$logInUsername' and status = 1 and modifiedDate > '$logInModifiedDate';";
+    $selectedRow = getSelectedRow($sql);
+    if(sizeof($selectedRow) == 0)
+    {
+        $arrCustomerDeviceToken = array();
+        array_push($arrCustomerDeviceToken,$customerDeviceToken);
+        $category = "updateStatus";
+        sendPushNotificationToDeviceWithPath($arrCustomerDeviceToken,"./../$jummum/",'jill',$msg,$receiptID,$category,1);
+    }
     
     
     
     
+    
+    
+    
+    
+    
+    //dataJson
+    $sql = "select * from Receipt where receiptID = '$receiptID';";
+    $dataJson = executeMultiQueryArray($sql);
     
     
     
@@ -217,7 +233,7 @@
     
     
     writeToLog("query commit, file: " . basename(__FILE__) . ", user: " . $_POST['modifiedUser']);
-    $response = array('status' => '1', 'sql' => $sql, 'tableName' => 'ReceiptSendToKitchen', 'dataJson' => $dataJson);
+    $response = array('status' => '1', 'sql' => $sql, 'tableName' => 'Receipt', 'dataJson' => $dataJson);
     echo json_encode($response);
     exit();
 ?>

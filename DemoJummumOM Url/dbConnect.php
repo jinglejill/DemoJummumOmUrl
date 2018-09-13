@@ -1,13 +1,10 @@
 <?php
-    include_once("./../../NeedUpdateVersion/JMSNeedUpdateVersion.php");
+    include_once("./../../MasterDemo/JMSNeedUpdateVersion.php");
     
     //conection variable
     $con;
     $jummum = "DEMO_JUMMUM";
     $jummumOM = "DEMO_JUMMUM_OM";
-    $urlPath = "DEMO1.5.2/";
-    $jummumPath = "$urlPath$jummum/";
-    $jummumOMPath = "$urlPath$jummumOM/";
     $encryptKey = "jmmom";
     $jummumCkPath = "./../$jummum/";
     $jummumCkPass = "jill";
@@ -164,7 +161,7 @@
                 $paramAndValue = "Param=Value: ";
             }
             $paramAndValue .= "$param_name=$param_val&";
-            $_POST['$param_name'] = mysqli_real_escape_string($con,$param_val);
+            $_POST[$param_name] = mysqli_real_escape_string($con,$param_val);
             $i++;
         }
         
@@ -825,12 +822,12 @@
 
         if(!$pushFail)
         {
-            $fp = stream_socket_client(
-                                       'ssl://gateway.sandbox.push.apple.com:2195', $err,
-                                       $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
 //            $fp = stream_socket_client(
-//                                       'ssl://gateway.push.apple.com:2195', $err,
+//                                       'ssl://gateway.sandbox.push.apple.com:2195', $err,
 //                                       $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
+            $fp = stream_socket_client(
+                                       'ssl://gateway.push.apple.com:2195', $err,
+                                       $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
         }
         
         
@@ -879,12 +876,12 @@
         
         if(!$pushFail)
         {
-            $fp = stream_socket_client(
-                                       'ssl://gateway.sandbox.push.apple.com:2195', $err,
-                                       $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
-            //            $fp = stream_socket_client(
-            //                                       'ssl://gateway.push.apple.com:2195', $err,
-            //                                       $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
+//            $fp = stream_socket_client(
+//                                       'ssl://gateway.sandbox.push.apple.com:2195', $err,
+//                                       $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
+                        $fp = stream_socket_client(
+                                                   'ssl://gateway.push.apple.com:2195', $err,
+                                                   $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
         }
         
         
@@ -931,12 +928,12 @@
         
         if(!$pushFail)
         {
-            $fp = stream_socket_client(
-                                       'ssl://gateway.sandbox.push.apple.com:2195', $err,
-                                       $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
 //            $fp = stream_socket_client(
-//                                       'ssl://gateway.push.apple.com:2195', $err,
+//                                       'ssl://gateway.sandbox.push.apple.com:2195', $err,
 //                                       $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
+            $fp = stream_socket_client(
+                                       'ssl://gateway.push.apple.com:2195', $err,
+                                       $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
         }
         
         
@@ -971,7 +968,7 @@
 
     function sendEmail($toAddress,$subject,$body)
     {
-        require './../phpmailermaster/PHPMailerAutoload.php';
+        require './../../phpmailermaster/PHPMailerAutoload.php';
         $mail = new PHPMailer;
 //        writeToLog("phpmailer");
         //$mail->SMTPDebug = 3;                               // Enable verbose debug output

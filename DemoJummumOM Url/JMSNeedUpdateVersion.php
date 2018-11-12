@@ -1,4 +1,4 @@
 <?php
-    $needUpdateVersion = "1.3.3";
+    $needUpdateVersion = "1.2.1";
     $checkUpdate = 1;
 ?>

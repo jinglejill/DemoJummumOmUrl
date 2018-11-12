@@ -1,16 +1,18 @@
 <?php
-    include_once("./../../MasterDemo/JMSNeedUpdateVersion.php");
+    $masterFolder = "MasterDemo";
+    include_once("./../$masterFolder/JMSNeedUpdateVersion.php");
+    
     
     //conection variable
     $con;
     $jummum = "DEMO_JUMMUM";
     $jummumOM = "DEMO_JUMMUM_OM";
     $encryptKey = "jmmom";
-    $jummumCkPath = "./../$jummum/";
+    $jummumCkPath = "./../$masterFolder/JUMMUM/";
     $jummumCkPass = "jill";
-    $jummumOMCkPath = "./../$jummumOM/";
+    $jummumOMCkPath = "./../$masterFolder/JUMMUM_OM/";
     $jummumOMCkPass = "jill";
-    $adminCkPath = "./../../AdminApp/";
+    $adminCkPath = "./../AdminApp/";
     $adminCkPass = "jill";
     $bundleID = "com.JummumCo.DemoJummumOM";
     $firebaseKeyJummum = "AAAAz3AS81k:APA91bFKi3sIJEGKHaugE1gSB0i0MHio4W4EnOrrvOWzL9lPufo7ZKrinuhnQlUyGGLwx0925AGW5FvJ5xI2cKiuwU2rSsDGMQzT7-DEKviu2Y3OgHcFqpagJSu9j2qAAJVOAu9hSZf6sxOmcMJEcJrQVJGKGlJhPQ";
@@ -27,7 +29,7 @@
         $ch = curl_init();
         
         // set url
-//        curl_setopt($ch, CURLOPT_URL, "http://www.jummum.co/DEV/DEV_JUMMUM_OM/test.php");
+//curl_setopt($ch, CURLOPT_URL, "http://www.jummum.co/MasterDemo/JUMMUM/JMMLatestVersion.php");
         curl_setopt($ch, CURLOPT_URL, "http://itunes.apple.com/lookup?bundleId=$bundleID");
         
         //return the transfer as a string
@@ -430,28 +432,12 @@
                 }
                 
                 
-                //----in the period of user use old version, we need to send receiptID key
-                if($data)
-                {
-                    $receiptID = $data["receiptID"];
-                    if(!$receiptID)
-                    {
-                        $receiptID = $data["settingID"];
-                    }
-                }
-                if($receiptID)
-                {
-                    $paramBody["receiptID"] = $receiptID;
-                }
-                //----------------
-                
-                
                 sendPushNotificationWithPath($eachDeviceToken, $paramBody, $adminCkPath, $adminCkPass);
             }
             else
             {
                 $key = $firebaseKeyAdmin;
-                sendFirebasePushNotification($eachDeviceToken,"",$msg,$data,$key);
+                sendFirebasePushNotification($eachDeviceToken,$text,"",$data,$key);
             }
         }
     }
@@ -480,28 +466,12 @@
                 }
                 
                 
-                //----in the period of user use old version, we need to send receiptID key
-                if($data)
-                {
-                    $receiptID = $data["receiptID"];
-                    if(!$receiptID)
-                    {
-                        $receiptID = $data["settingID"];
-                    }
-                }
-                if($receiptID)
-                {
-                    $paramBody["receiptID"] = $receiptID;
-                }
-                //----------------
-                
-                
                 sendPushNotificationWithPath($eachDeviceToken, $paramBody, $jummumCkPath, $jummumCkPass);
             }
             else
             {
                 $key = $firebaseKeyJummum;
-                sendFirebasePushNotification($eachDeviceToken,"",$msg,$data,$key);
+                sendFirebasePushNotification($eachDeviceToken,$text,"",$data,$key);
             }
         }
     }
@@ -531,39 +501,14 @@
                 {
                     $paramBody["data"] = $data;
                 }
-                
-                
-                //----in the period of user use old version, we need to send receiptID key
-                if($data)
-                {
-                    $receiptID = $data["receiptID"];
-                    if(!$receiptID)
-                    {
-                        $receiptID = $data["settingID"];
-                    }
-                }
-                if($receiptID)
-                {
-                    $paramBody["receiptID"] = $receiptID;
-                }
-                //----------------
-                
+            
                 
                 sendPushNotificationWithPath($eachDeviceToken, $paramBody, $jummumOMCkPath, $jummumOMCkPass);
-                
-                
-                //----in the period of user use old version, we need to send receiptID key
-                if($category == "updateStatus")
-                {
-                    $paramBody["category"] = "cancelOrder";
-                    sendPushNotificationWithPath($eachDeviceToken, $paramBody, $jummumOMCkPath, $jummumOMCkPass);
-                }
-                //----------------
             }
             else
             {
                 $key = $firebaseKeyJummumOM;
-                sendFirebasePushNotification($eachDeviceToken,"",$msg,$data,$key);
+                sendFirebasePushNotification($eachDeviceToken,$text,"",$data,$key);
             }
         }
     }
@@ -968,7 +913,7 @@
 
     function sendEmail($toAddress,$subject,$body)
     {
-        require './../../phpmailermaster/PHPMailerAutoload.php';
+        require './../phpmailermaster/PHPMailerAutoload.php';
         $mail = new PHPMailer;
 //        writeToLog("phpmailer");
         //$mail->SMTPDebug = 3;                               // Enable verbose debug output
